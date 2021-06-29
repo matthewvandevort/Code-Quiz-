@@ -1,19 +1,21 @@
+// variable for questions, choices and answers
+
 var questions = [
     {
-      title: "Commonly used data types DO NOT include:",
-      choices: ["strings", "booleans", "alerts", "numbers"],
-      answer: "alerts"
+      title: "Which of these are a programming language?",
+      choices: ["JavaScript", "French", "Russian", "Array"],
+      answer: "JavaScript"
     },
     {
       title:
-        "A very useful tool used during development and debugging for printing content to the debugger is:",
-      choices: ["JavaScript", "terminal / bash", "for loops", "console.log"],
-      answer: "console.log"
+        "What tag can be used to insert a line break or blank line in an HTML document?",
+      choices: ["<body></body>", "<title></title>", "<br></br>", "<section></section>"],
+      answer: "<br></br>"
     },
     {
-      title: "Which of these is NOT a flex direction property?",
-      choices: ["row", "column", "wrap", "column-reverse"],
-      answer: "wrap"
+      title: "In JavaScript, what element is used to store and manipulate text, usually in multiples?",
+      choices: ["Recorders", "Arrays", "Variables", "Strings"],
+      answer: "Array"
     },
     {
       title:
@@ -28,8 +30,8 @@ var questions = [
     },
     {
       title:
-        "In HTML, an ordered list is created using which tag?",
+        "In HTML, an unordered list is created using which tag?",
       choices: ["<UL>", "<NL>", "<OL>", "<AL>"],
-      answer: "<OL>"
+      answer: "<UL>"
     }
   ];

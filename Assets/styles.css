@@ -1,7 +1,4 @@
-body {
-    background-color: rgb(29, 26, 26);
-}
-
+/* styles used in entire page */
 * {
     box-sizing: border-box;
     padding: 0;
@@ -9,8 +6,25 @@ body {
     font-size: 62.5%;
 }
 
+/* Styles for HTML tags */
+body {
+    background-color: rgb(29, 26, 26);
+  }
+  
+a {
+    color: rgb(28, 26, 26);
+    text-decoration: none;
+    transition: color 0.1s;
+}
+  
 h1 {
     font-size: 5rem;
+    color: white;
+    margin-bottom: 5rem;
+}
+
+h2 {
+    font-size: 3rem;
     color: white;
     margin-bottom: 5rem;
 }
@@ -21,7 +35,7 @@ p {
     margin-bottom: 3.5rem;
     
 }
-
+  
 button {
     font-size: 2.4rem;
     padding: 2rem 0;
@@ -31,25 +45,41 @@ button {
     color: rgb(28, 26, 26);
     background: royalblue;
     border-radius: 40px;
-    width: 20rem;
+    width: 40rem;
     align-self: center;
 }
-
-.start {
-    text-align: center;
+  
+button:hover {
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1.4rem 0 rgba(8, 114, 244, 0.6);
+    transition: transform 150ms;
+    transform: scale(1.1);
 }
+  
 
-.hide {
-    display: none;
-  }
-
-.timer {
-    color: white;
-    font-size: 3rem;
+  
+input[type="text"] {
+    font-size: 100%;
 }
+  
+ol {
+    display: flex;
+    flex-direction: column;
 
-
-.container {
+}
+  
+li {
+    display: flex;
+    padding: 5px;
+    list-style: decimal inside none;
+}
+  
+li:nth-child(odd) {
+    background-color: #f3edfc;
+}
+ 
+/* Styles for classes */
+.wrapper {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -60,29 +90,24 @@ button {
     text-align: center;
 }
 
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-center {
-    justify-content: center;
-    align-items: center;
-}
-
 .choices button {
-    font-size: 2.4rem;
-    padding: 2rem 0;
-    text-align: center;
-    margin-bottom: 1rem;
-    text-decoration: none;
-    color: rgb(28, 26, 26);
-    background: royalblue;
-    border-radius: 40px;
-    width: 20rem;
-    align-self: center;
+    display: block
 }
 
+.timer {
+    color: white;
+    font-size: 3rem;
+}
+  
+.hide {
+    display: none;
+}
+  
+.start {
+    text-align: center;
+}
+
+  
 .btn {
     font-size: 2.4rem;
     padding: 2rem 0;
@@ -96,6 +121,25 @@ button {
     align-self: center;
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+  
+.feedback {
+    font-style: italic;
+    font-size: 2.4rem;
+    margin-top: 20px;
+    padding-top: 10px;
+    color: gray;
+    border-top: 2px solid #ccc;
+  }
+
 .btn:hover {
     cursor: pointer;
     box-shadow: 0 0.5rem 1.4rem 0 rgba(8, 114, 244, 0.6);
@@ -107,8 +151,10 @@ button {
     font-size: 3rem;
 }
 
+/* Styles for id's */
 #highscore-btn{
     background: rgb(245, 245, 81);
+    align-self: center;
 }
 
 #highscore-btn:hover {
