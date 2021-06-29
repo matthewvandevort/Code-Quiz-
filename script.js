@@ -17,7 +17,7 @@ function quizStart() {
   var homeScreen = document.getElementById('home');
   homeScreen.setAttribute('class', 'start hide');
 
-  questionsEl.setAttribute('class', " ");
+  questionsEl.setAttribute('class', ' ');
   
   timerId = setInterval(function () {
     clockTick();
@@ -29,22 +29,23 @@ function quizStart() {
 }
 
 function getQuestion() {
+  // get current question object from array
   var currentQuestion = questions[currentQuestionIndex];
-
+  // update title with current question
   questionsEl.children[0].textContent = currentQuestion.title;
-
+  // clear out any old question choices
   while (choicesEl.hasChildNodes()) {
     choicesEl.removeChild(choicesEl.lastChild);
-
   }
+  // loop over choices
+  for(var i = 0; i < currentQuestion.choices.length; i++){
 
-  for (let i = 0; i < currentQuestion.choices.length; i++) {
-    var choiceButton = document.createElement('button');
+    // create new button for each choice
+    var choiceButton = document.createElement("button");
     choiceButton.textContent = currentQuestion.choices[i];
-
-
-    choicesEl.appendChild(choiceButton);
     
+    // display on the page
+    choicesEl.appendChild(choiceButton);
   }
 
   choicesEl.children[0].addEventListener("click", function(event){
@@ -67,8 +68,48 @@ function questionAnswer(answerChoice) {
   if (answerChoice.textContent != questions[currentQuestionIndex].answer) {
     time -= 10;
 
-    feedbackEl
+    feedbackEl.textContent = 'Incorrect';
+  } else {
+    feedbackEl.textContent = 'Correct';
   }
+
+  feedbackEl.setAttribute('class', 'feedback');
+  setInterval(function () {
+    feedbackEl.setAttribute('class', 'feedback hide');
+  }, 500);
+
+  currentQuestionIndex++;
+
+
+  if (currentQuestionIndex === question.length) 
+    quizEnd();
+
+  else
+
+    getQuestion();
+
+}
+
+function quizEnd() {
+  // stop timer
+  clearInterval(timerId);
+  timerEl.textContent = time;
+
+  var endScreenEl = document.getElementById('end-screen');
+  endScreenEl.setAttribute("class", " ");
+
+  var finalScoreEl = document.getElementById("score");
+  finalScoreEl.textContent = time;
+
+  questionsEl.setAttribute("class", "hide");
+}
+
+function clockTick() {
+  time--;
+  timerEl.textContent = time;
+ 
+  if(time <= 0)
+    quizEnd();
 }
 
 
