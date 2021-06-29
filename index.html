@@ -8,20 +8,38 @@
     <title>Code Quiz</title>
 </head>
 <body>
+    <div class="timer">Time Left: <span id="time">0</span></div>
+
     <div class="container">
-        <div id="home" class="flex-column" class="flex-center">
+        <div id="home" class="flex-column" class="flex-center" class="start">
             <h1>Code Quiz</h1>
             <p>
-                Answer th code related questions within the time limit.
+                Answer the code related questions within the time limit.
                 <br>
                 Incorrect answers will penalize your time
                 <br>
                 by five seconds!
             </p>
-            <button id="start-button">Start Quiz</button>
+            <button id="start-button" class="btn">Start Quiz</button>
             <a href="/highscores.html" id="highscore-btn" class="btn">High Scores</a>
         </div>
+        <div id="questions" class="flex-column" class="flex-center" class="hide"></div>
+            <h2 id="question-name"></h2>
+            <div id="choices" class="choices"></div>
+        </div>
+
+        <div id="end" class="flex-column hide flex-center">
+            <h1>Quiz completed!</h1>
+            <p>Your scored <span id="score"></span>.</p>
+            <p>
+                Please enter your initials: <input type="text" id="initials" max="3" />
+            <button id="submit">Submit</button>
+            </p>
+        </div>
+
+        <div id="feedback" class="feedback hide"></div>
     </div>
 </body>
 <script src="./script.js"></script>
+<script src="./questions.js"></script>
 </html>
