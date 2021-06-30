@@ -26,7 +26,7 @@ Description of project: This project was to create a Code Quiz using HTML, CSS, 
 
 # Link to Deployed Project
 
-[Code Quiz](https://matthewvandevort.github.io/Password-Generator/)
+[Code Quiz](https://matthewvandevort.github.io/Code-Quiz-/)
 
 # Resources Used
 
